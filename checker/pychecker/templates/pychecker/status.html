@@ -1,0 +1,14 @@
+<!-- status do site -->
+<div class="pt-4">
+	{% if status  %}
+	<div class="notification is-info">
+		<h3><i>{{site}}</i> esta online!</h3>
+	</div>
+
+	{% elif status == False %}
+		<div class="notification is-warning">
+			<h3><i>{{site}}</i> esta offline!</h3>
+		</div>
+	{% endif %}
+
+</div>

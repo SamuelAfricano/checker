@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ConectorPy</title>
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'css/bulma.css' %}">
+	<script src="{% static 'js/jquery.js' %}" crossorigin="anonymous"></script>
+</head>
+<body>
+	<header class="hero is-small is-success mb-4 p-4">
+		<h1 class="title is-1">CenectorPy</h1>
+	</header>
+
+	<form  method="POST" action="" class="hero-body" style="width: 50%; margin: 1px auto;text-align: center;">
+		{% csrf_token %}
+
+		<h1 class="title is-4">Verificador de conectividade de sites</h1>
+		<div class="control">
+			<input type="text" name="url" id="link" placeholder="https://exemplo.com" class="p-2 input" required> 
+		</div>
+		<button class="button is-primary mt-4" type="submit" id="enviar" >Verificar</button>
+		
+		{% include "pychecker/status.html"  %}
+
+	</form>
+	
+</body>
+</html>
